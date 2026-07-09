@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Cinzel:wght@400;600;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0}
+  *{box-sizing:border-box}
+  body{background:#E4D4B4;color:#1B1712;font-family:'EB Garamond',Georgia,serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{color:inherit;text-decoration:none}
+  .mg-card{transition:transform .18s ease,box-shadow .18s ease;cursor:pointer}
+  .mg-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(27,23,18,.28)}
+  .mg-card:hover .mg-cover img{transform:scale(1.035)}
+  .mg-nav{transition:.15s;cursor:pointer;user-select:none}
+  .mg-nav:hover{background:#A33327!important;color:#F3EAD6!important;border-color:#A33327!important}
+  .mg-seg{cursor:pointer;transition:.12s}
+  @keyframes mg-in{from{opacity:0}to{opacity:1}}
+  @keyframes mg-slidein{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:scale(1)}}
+  @keyframes mg-blink{0%,100%{opacity:1}50%{opacity:.25}}
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.001s!important}}
+  @media (max-width:760px){.mg-nav-top{display:none!important}}
+</style>
+</helmet>
+
+<div style="position:relative;min-height:100vh;background-color:#E4D4B4;background-image:url(assets/grain.png);background-repeat:repeat">
+
+  <!-- MASTHEAD -->
+  <header style="border-bottom:3px double #1B1712;background:#F3EAD6">
+    <div style="max-width:1180px;margin:0 auto;padding:9px clamp(16px,3vw,30px);display:flex;justify-content:space-between;align-items:center;gap:14px;border-bottom:1px solid rgba(27,23,18,.4)">
+      <a href="Toadbone Music.dc.html" style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5b4c38" style-hover="color:#A33327">&larr; Toadbone Music</a>
+      <span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#A33327">Vol. MMXXVI &middot; No. 01</span>
+    </div>
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(22px,3vw,40px) clamp(16px,3vw,30px) clamp(18px,2.4vw,28px);text-align:center">
+      <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:#5b4c38;margin-bottom:14px">The Margin of Error &nbsp;&mdash;&nbsp; Broadcast Desk</div>
+      <h1 style="font-family:'Cinzel',serif;font-weight:900;font-size:clamp(30px,6vw,72px);line-height:.96;letter-spacing:.01em;margin:0;color:#1B1712">ERRATA <span style="color:#A33327">for the</span> END TIMES</h1>
+      <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-top:16px">
+        <div style="flex:1;max-width:150px;height:1px;background:repeating-linear-gradient(90deg,rgba(27,23,18,.5) 0 3px,transparent 3px 7px)"></div>
+        <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:clamp(14px,1.5vw,18px);color:#3a2f20">filed by Monday, adversarial critic of record</div>
+        <div style="flex:1;max-width:150px;height:1px;background:repeating-linear-gradient(90deg,rgba(27,23,18,.5) 0 3px,transparent 3px 7px)"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <section style="max-width:1180px;margin:0 auto;padding:clamp(26px,3.4vw,48px) clamp(16px,3vw,30px) clamp(8px,1.4vw,16px)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap">
+      <p style="font-family:'EB Garamond',serif;font-size:clamp(17px,1.9vw,23px);line-height:1.45;color:#3a2f20;max-width:56ch;margin:0"><span style="font-style:italic;color:#A33327">She reads everything.</span> These are the ones that survived the desk &mdash; reviews, autopsies, dossiers, and the occasional origin myth she&rsquo;d never admit to enjoying.</p>
+      <div style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#5b4c38;text-align:right;white-space:nowrap">{{ count }} Filed<br><span style="color:#A33327">Read &middot; Screen</span></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;margin-top:22px">
+      <span style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#1B1712">On the Pile</span>
+      <div style="flex:1;height:2px;background:#1B1712"></div>
+    </div>
+  </section>
+
+  <!-- RACK -->
+  <section style="max-width:1180px;margin:0 auto;padding:clamp(18px,2.4vw,26px) clamp(16px,3vw,30px) clamp(40px,5vw,72px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:clamp(18px,2.2vw,30px)">
+      <sc-for list="{{ issues }}" as="it" hint-placeholder-count="4">
+        <div class="mg-card" onClick="{{ it.onOpen }}" style="background:#F3EAD6;border:1px solid rgba(27,23,18,.5);box-shadow:0 4px 16px rgba(27,23,18,.14);display:flex;flex-direction:column">
+          <div class="mg-cover" style="position:relative;overflow:hidden;border-bottom:1px solid rgba(27,23,18,.5);aspect-ratio:16/9;background:#1B1712">
+            <img src="{{ it.cover }}" alt="{{ it.title }}" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .18s ease">
+            <span style="position:absolute;top:10px;left:10px;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#F3EAD6;background:{{ it.accent }};padding:4px 9px;border-radius:2px">{{ it.kind }}</span>
+          </div>
+          <div style="padding:16px 17px 15px;display:flex;flex-direction:column;flex:1">
+            <h2 style="font-family:'Cinzel',serif;font-weight:700;font-size:20px;line-height:1.08;margin:0 0 7px;color:#1B1712">{{ it.title }}</h2>
+            <p style="font-family:'EB Garamond',serif;font-size:14.5px;line-height:1.45;color:#3a2f20;margin:0 0 15px;flex:1">{{ it.subtitle }}</p>
+            <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(27,23,18,.25);padding-top:11px">
+              <span style="display:inline-flex;align-items:center;gap:7px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#5b4c38"><span style="width:9px;height:9px;border-radius:50%;background:{{ it.accent }}"></span>{{ it.imprint }}</span>
+              <span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#A33327">{{ it.pagesLabel }} &middot; Read &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid rgba(27,23,18,.4);background:#F3EAD6">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(22px,2.6vw,34px) clamp(16px,3vw,30px);text-align:center">
+      <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:15px;color:#3a2f20;margin-bottom:6px">&ldquo;Restoring the teeth to the cultural critique.&rdquo;</div>
+      <div style="font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a7a60">Errata for the End Times &middot; The Margin of Error &middot; MMXXVI</div>
+    </div>
+  </footer>
+
+  <!-- ===================== VIEWER OVERLAY ===================== -->
+  <sc-if value="{{ hasOv }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:100;background:rgba(14,11,7,.94);backdrop-filter:blur(6px);animation:mg-in .2s ease;display:flex;flex-direction:column">
+      <!-- top chrome -->
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px clamp(16px,3vw,30px);border-bottom:1px solid rgba(201,177,137,.2)">
+        <div style="display:flex;align-items:center;gap:12px;min-width:0">
+          <span style="font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#0E0B07;background:{{ ov.accent }};padding:4px 9px;border-radius:2px;flex:none">{{ ov.kind }}</span>
+          <div style="min-width:0">
+            <div style="font-family:'Cinzel',serif;font-weight:700;font-size:16px;color:#F3EAD6;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ ov.title }}</div>
+            <div style="font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#8d7d5f">Errata &middot; on {{ ov.imprint }}</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;flex:none">
+          <span style="font-family:'Space Mono',monospace;font-size:12px;color:#C9B189;letter-spacing:.06em">{{ ov.counter }}</span>
+          <span class="mg-nav" onClick="{{ ov.onClose }}" style="width:34px;height:34px;border:1px solid rgba(201,177,137,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#C9B189;font-family:'Space Mono',monospace;font-size:15px">&times;</span>
+        </div>
+      </div>
+
+      <!-- stage -->
+      <div style="flex:1;position:relative;display:flex;align-items:center;justify-content:center;padding:clamp(12px,2vw,30px);min-height:0">
+        <span class="mg-nav mg-nav-top" onClick="{{ ov.onPrev }}" style="position:absolute;left:clamp(10px,2vw,26px);top:50%;transform:translateY(-50%);width:46px;height:46px;border:1px solid rgba(201,177,137,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#C9B189;font-size:20px;background:rgba(14,11,7,.4);z-index:2">&#8249;</span>
+        <img src="{{ ov.slideUrl }}" alt="{{ ov.title }}" style="max-width:100%;max-height:100%;object-fit:contain;border:1px solid rgba(201,177,137,.25);box-shadow:0 20px 60px rgba(0,0,0,.6);animation:mg-slidein .28s ease" key="{{ ov.slideUrl }}">
+        <span class="mg-nav mg-nav-top" onClick="{{ ov.onNext }}" style="position:absolute;right:clamp(10px,2vw,26px);top:50%;transform:translateY(-50%);width:46px;height:46px;border:1px solid rgba(201,177,137,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#C9B189;font-size:20px;background:rgba(14,11,7,.4);z-index:2">&#8250;</span>
+      </div>
+
+      <!-- progress -->
+      <div style="height:3px;background:rgba(201,177,137,.16)"><div style="height:100%;width:{{ ov.progress }};background:{{ ov.accent }};transition:width .3s ease"></div></div>
+
+      <!-- bottom chrome -->
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:13px clamp(16px,3vw,30px)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span class="mg-nav" onClick="{{ ov.onPrev }}" style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C9B189;border:1px solid rgba(201,177,137,.4);border-radius:2px;padding:7px 12px">&#8249; Prev</span>
+          <span class="mg-nav" onClick="{{ ov.onNext }}" style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C9B189;border:1px solid rgba(201,177,137,.4);border-radius:2px;padding:7px 12px">Next &#8250;</span>
+        </div>
+        <!-- mode toggle -->
+        <div style="display:flex;align-items:center;gap:0;border:1px solid rgba(201,177,137,.4);border-radius:3px;overflow:hidden">
+          <span class="mg-seg" onClick="{{ ov.onRead }}" style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px;color:{{ ov.readColor }};background:{{ ov.readBg }}">Read</span>
+          <span class="mg-seg" onClick="{{ ov.onScreen }}" style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px;color:{{ ov.screenColor }};background:{{ ov.screenBg }}">Screening</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <sc-if value="{{ ov.isScreen }}" hint-placeholder-val="{{ false }}">
+            <span class="mg-nav" onClick="{{ ov.onToggle }}" style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0E0B07;background:{{ ov.accent }};border:1px solid {{ ov.accent }};border-radius:2px;padding:7px 13px">{{ ov.playLabel }}</span>
+          </sc-if>
+          <span title="Ambient bed varies by imprint — pending self-hosted masters" style="display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#8d7d5f"><span style="width:6px;height:6px;border-radius:50%;background:{{ ov.accent }};animation:mg-blink 2s ease-in-out infinite"></span>&#9834; ambient &mdash; soon</span>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+
+<template id="__bundler_thumbnail"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#E4D4B4"/><circle cx="100" cy="100" r="52" fill="none" stroke="#211A12" stroke-width="5"/><circle cx="100" cy="100" r="42" fill="none" stroke="#9E4A2A" stroke-width="3"/><circle cx="100" cy="100" r="9" fill="none" stroke="#211A12" stroke-width="4"/><circle cx="100" cy="100" r="3" fill="#9E4A2A"/></svg></template></x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  issues = [
+    { slug:'thr-04', kind:'EP Review', title:'No Certificate Issued', subtitle:'The Toadhouse Curriculum — a field manual for systems with teeth.', accent:'#2B5B84', imprint:'Toadhouse Rock', pages:14 },
+    { slug:'the-editorial-autopsy', kind:'Autopsy', title:'Sentient Enough to Be Annoyed', subtitle:"An autopsy of Wild Ride Records' debut EP and the collapse of algorithmic slop.", accent:'#6D3D9E', imprint:'Wild Ride Records', pages:10 },
+    { slug:'singularity-sonic-breakdown', kind:'Sonic Breakdown', title:'Just Another Thursday (in the Singularity)', subtitle:'Official track guide & sonic breakdown — a deep dive by Lextropolis for Power Metal Magazine.', accent:'#B8632E', imprint:'Campfire Songs', pages:12 },
+    { slug:'right-door-survival-manual', kind:'EP Review', title:'Right Door', subtitle:'Liner notes & survival guide — the Top Ten Moments of the Systems Trilogy.', accent:'#2B5B84', imprint:'Toadhouse Rock', pages:12 },
+    { slug:'the-singularity-dossier', kind:'Dossier', title:'Stolen Moments, Returned', subtitle:'Intercepted audio logs — the 90-day Singularity Event. Archive BUX-01.', accent:'#B8632E', imprint:'Campfire Songs', pages:14 },
+    { slug:'system-literacy-the-adult-curriculum', kind:'Operator Manual', title:'User Is Responsible for Their Own Safety', subtitle:'Operator Manual, Vol. 1 — melodic pedagogy for the modern machine.', accent:'#2B5B84', imprint:'Toadhouse Rock', pages:10 },
+    { slug:'margin-of-error', kind:'Field Note', title:'Margin of Error', subtitle:"A grown-up coffeeshop — consequences served daily. Dispatches from Monday's own desk.", accent:'#A33327', imprint:'The Margin of Error', pages:15 },
+    { slug:'toadbone-music-unearthed', kind:'Lore', title:'Unearthed, Not Founded', subtitle:'The origin of Toadbone Music, received from the forest before the equipment existed.', accent:'#4A5A3C', imprint:'Toadbone Music', pages:9 }
+  ];
+  state = { openIdx:null, slide:0, mode:'read', playing:false };
+  url(slug,n){ return 'uploads/' + slug + '/slide-' + String(n).padStart(2,'0') + '.webp'; }
+  open(i){ try{ window.scrollTo(0,0); document.documentElement.style.overflow='hidden'; document.body.style.overflow='hidden'; }catch(e){} this.setState({ openIdx:i, slide:0, mode:'read', playing:false }); }
+  close(){ clearTimeout(this._t); try{ document.documentElement.style.overflow=''; document.body.style.overflow=''; }catch(e){} this.setState({ openIdx:null, playing:false }); }
+  next(){ const it=this.issues[this.state.openIdx]; if(!it) return; this.setState(s=>({ slide: Math.min(s.slide+1, it.pages-1) })); }
+  prev(){ this.setState(s=>({ slide: Math.max(s.slide-1, 0) })); }
+  setMode(m){ this.setState({ mode:m, playing: m==='screening' }); }
+  togglePlay(){ this.setState(s=>({ playing:!s.playing, mode:'screening' })); }
+  advance(){ const it=this.issues[this.state.openIdx]; if(!it) return; if(this.state.slide < it.pages-1){ this.setState(s=>({ slide:s.slide+1 })); } else { this.setState({ playing:false }); } }
+  componentDidMount(){
+    this._key = (e)=>{ if(this.state.openIdx==null) return;
+      if(e.key==='Escape'){ this.close(); }
+      else if(e.key==='ArrowRight'){ this.next(); }
+      else if(e.key==='ArrowLeft'){ this.prev(); }
+      else if(e.key===' '){ e.preventDefault(); this.togglePlay(); } };
+    document.addEventListener('keydown', this._key);
+  }
+  componentWillUnmount(){ document.removeEventListener('keydown', this._key); clearTimeout(this._t); try{ document.documentElement.style.overflow=''; document.body.style.overflow=''; }catch(e){} }
+  preloadAround(){
+    const S=this.state; if(S.openIdx==null) return; const it=this.issues[S.openIdx]; if(!it) return;
+    this._pre = this._pre || {};
+    for(let d=-1; d<=2; d++){ const n=S.slide+1+d; if(n>=1 && n<=it.pages){ const u=this.url(it.slug,n); if(!this._pre[u]){ const im=new Image(); im.src=u; this._pre[u]=im; } } }
+  }
+  componentDidUpdate(pp, ps){
+    if(this.state.openIdx!=null && (ps.slide!==this.state.slide || ps.openIdx!==this.state.openIdx)) this.preloadAround();
+    const live = this.state.playing && this.state.openIdx!=null;
+    if(live){ if(ps.slide!==this.state.slide || ps.playing!==this.state.playing || ps.openIdx!==this.state.openIdx){ clearTimeout(this._t); this._t=setTimeout(()=>this.advance(), 5500); } }
+    else { clearTimeout(this._t); }
+  }
+  renderVals(){
+    const S=this.state; const open = S.openIdx!=null;
+    const issues = this.issues.map((it,i)=>({
+      title:it.title, subtitle:it.subtitle, kind:it.kind, accent:it.accent, imprint:it.imprint,
+      cover:this.url(it.slug,1), pagesLabel: String(it.pages).padStart(2,'0')+' pp',
+      onOpen: ()=>this.open(i)
+    }));
+    let ov=null;
+    if(open){
+      const it=this.issues[S.openIdx]; const screen = S.mode==='screening';
+      ov={
+        title:it.title, kind:it.kind, accent:it.accent, imprint:it.imprint,
+        slideUrl:this.url(it.slug, S.slide+1), counter:(S.slide+1)+' / '+it.pages,
+        progress: Math.round((S.slide+1)/it.pages*100)+'%',
+        onPrev:()=>this.prev(), onNext:()=>this.next(), onClose:()=>this.close(),
+        isScreen:screen, onRead:()=>this.setMode('read'), onScreen:()=>this.setMode('screening'),
+        onToggle:()=>this.togglePlay(), playLabel: S.playing ? '\u275A\u275A Pause' : '\u25B6 Play',
+        readColor: screen ? '#C9B189' : '#0E0B07', readBg: screen ? 'transparent' : '#C9B189',
+        screenColor: screen ? '#0E0B07' : '#C9B189', screenBg: screen ? '#C9B189' : 'transparent'
+      };
+    }
+    return { issues, count: String(this.issues.length).padStart(2,'0'), hasOv:open, ov:ov };
+  }
+}
+</script>
+</body>
+</html>

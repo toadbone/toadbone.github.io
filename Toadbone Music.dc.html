@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Cinzel:wght@400;500;600;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0}
+  *{box-sizing:border-box}
+  body{background:#E4D4B4;color:#211A12;font-family:'EB Garamond',Georgia,serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{color:inherit;text-decoration:none}
+  .tb-anchor{scroll-margin-top:82px}
+  details>summary{list-style:none;cursor:pointer}
+  details>summary::-webkit-details-marker{display:none}
+  .tb-navlink{position:relative;padding:3px 0}
+  .tb-navlink::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:1.5px;background:#9E4A2A;transition:right .25s ease}
+  .tb-navlink:hover::after{right:0}
+  .tb-imcard{transition:transform .2s ease,box-shadow .2s ease}
+  .tb-imcard:hover{transform:translateY(-4px)}
+  .tb-trow:hover{background:#EFE3CC}
+  @keyframes tb-blink{0%,100%{opacity:1}50%{opacity:.15}}
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.001s!important}}
+  @media (max-width:860px){.tb-hero{grid-template-columns:1fr!important}.tb-feat{grid-template-columns:1fr!important}.tb-forge{grid-template-columns:1fr 1fr!important}.tb-council{grid-template-columns:1fr 1fr!important}.tb-imprints{grid-template-columns:1fr!important}.tb-nav{display:none!important}}
+</style>
+</helmet>
+
+<div style="position:relative;background-color:#E4D4B4;background-image:url(assets/grain.png);background-repeat:repeat;overflow:hidden">
+
+  <!-- ===================== MASTHEAD ===================== -->
+  <header style="position:sticky;top:0;z-index:50;background:#F3EAD6;border-bottom:1px solid rgba(33,26,18,.55);box-shadow:0 2px 10px rgba(33,26,18,.08)">
+    <div style="height:3px;background:repeating-linear-gradient(90deg,#9E4A2A 0 14px,#211A12 14px 16px)"></div>
+    <div style="max-width:1200px;margin:0 auto;padding:10px clamp(16px,3vw,30px);display:flex;align-items:center;justify-content:space-between;gap:18px">
+      <a href="Toadbone Music.dc.html" style="display:flex;align-items:center;gap:11px">
+        <svg viewBox="0 0 200 200" width="34" height="34" style="display:block;flex:none">
+          <circle cx="100" cy="100" r="95" fill="none" stroke="#211A12" stroke-width="4"></circle>
+          <circle cx="100" cy="100" r="80" fill="none" stroke="#9E4A2A" stroke-width="2.5"></circle>
+          <circle cx="100" cy="100" r="15" fill="none" stroke="#211A12" stroke-width="3"></circle>
+          <circle cx="100" cy="100" r="4.5" fill="#9E4A2A"></circle>
+        </svg>
+        <span style="display:flex;flex-direction:column;line-height:1">
+          <span style="font-family:'Cinzel',serif;font-weight:900;font-size:17px;letter-spacing:.14em;color:#211A12">TOADBONE MUSIC</span>
+          <span style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.24em;color:#9E4A2A;margin-top:3px">EST &middot; MMXXVI &middot; TOAD HALL</span>
+        </span>
+      </a>
+      <nav class="tb-nav" style="display:flex;align-items:center;gap:clamp(9px,1.15vw,17px);font-family:'Cinzel',serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#211A12">
+        <a class="tb-navlink" href="#featured">The Catalog</a>
+        <a class="tb-navlink" href="Campfire Songs.dc.html">Campfire</a>
+        <a class="tb-navlink" href="Wild Ride Records.dc.html">Wild Ride</a>
+        <a class="tb-navlink" href="Toadhouse Rock.dc.html">Toadhouse</a>
+        <a class="tb-navlink" href="#forge">The Forge</a>
+        <a class="tb-navlink" href="#council">The Council</a>
+        <a class="tb-navlink" href="The Margin.dc.html">The Margin</a>
+      </nav>
+    </div>
+  </header>
+
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(16px,3vw,30px)">
+
+    <!-- ===================== HERO ===================== -->
+    <section style="padding:clamp(34px,4.4vw,68px) 0 clamp(28px,3.4vw,52px)">
+      <div class="tb-hero" style="display:grid;grid-template-columns:.9fr 1.12fr;gap:clamp(28px,4vw,60px);align-items:center">
+        <div>
+          <div style="display:flex;align-items:center;gap:15px;margin-bottom:20px">
+            <svg viewBox="0 0 200 200" width="76" height="76" style="display:block;flex:none">
+              <defs>
+                <path id="hSealTop" d="M 24 100 A 76 76 0 0 1 176 100" fill="none"></path>
+                <path id="hSealBot" d="M 32 106 A 68 68 0 0 0 168 106" fill="none"></path>
+              </defs>
+              <circle cx="100" cy="100" r="96" fill="none" stroke="#211A12" stroke-width="2.5"></circle>
+              <circle cx="100" cy="100" r="84" fill="none" stroke="#211A12" stroke-width="1"></circle>
+              <text font-family="Cinzel, serif" font-size="18" font-weight="700" letter-spacing="2.4" fill="#211A12"><textPath href="#hSealTop" startOffset="50%" text-anchor="middle">TOADBONE MUSIC</textPath></text>
+              <text font-family="Cinzel, serif" font-size="10.5" letter-spacing="4" fill="#9E4A2A"><textPath href="#hSealBot" startOffset="50%" text-anchor="middle">EST &middot; MMXXVI</textPath></text>
+              <circle cx="100" cy="100" r="15" fill="none" stroke="#211A12" stroke-width="1.2"></circle>
+              <circle cx="100" cy="100" r="9.5" fill="none" stroke="#9E4A2A" stroke-width="1"></circle>
+              <circle cx="100" cy="100" r="3.4" fill="#9E4A2A"></circle>
+            </svg>
+            <div style="font-family:'Cinzel',serif;font-weight:700;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:#9E4A2A;line-height:1.8">Toadbone Music<br><span style="color:#5b4c38">Presents</span></div>
+          </div>
+          <h1 style="font-family:'Cinzel',serif;font-weight:900;font-size:clamp(40px,6.6vw,88px);line-height:.94;letter-spacing:-.006em;margin:0;color:#211A12">UNEARTHED,<br>NOT FOUNDED</h1>
+          <div style="display:flex;align-items:center;gap:12px;margin:20px 0 18px">
+            <div style="width:60px;height:2px;background:#9E4A2A"></div>
+            <div style="width:9px;height:9px;background:#9E4A2A;transform:rotate(45deg)"></div>
+            <div style="flex:1;height:1px;background:repeating-linear-gradient(90deg,rgba(33,26,18,.5) 0 2px,transparent 2px 8px)"></div>
+          </div>
+          <p style="font-family:'EB Garamond',serif;font-style:italic;font-size:clamp(16px,1.6vw,21px);line-height:1.5;color:#473a28;margin:0 0 24px;max-width:44ch">&ldquo;Toadbone was not started. It was always here. The frequency existed before the equipment did &mdash; we just finally built something that could receive it.&rdquo;</p>
+          <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:22px">
+            <a href="#featured" style="display:inline-flex;align-items:center;gap:9px;font-family:'Cinzel',serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#F3EAD6;background:#211A12;padding:12px 20px;border-radius:2px" style-hover="background:#9E4A2A">Hear the Latest &darr;</a>
+            <a href="#forge" style="display:inline-flex;align-items:center;gap:9px;font-family:'Cinzel',serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#211A12;padding:12px 18px;border:1px solid rgba(33,26,18,.5);border-radius:2px" style-hover="border-color:#9E4A2A;color:#9E4A2A">What Is This? &rarr;</a>
+            <a href="State Your Condition.dc.html" style="display:inline-flex;align-items:center;gap:9px;font-family:'Cinzel',serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#F3EAD6;background:#9E4A2A;padding:12px 20px;border-radius:2px;box-shadow:0 2px 10px rgba(158,74,42,.28)" style-hover="background:#211A12"><span style="width:7px;height:7px;border-radius:50%;background:#F4C77B;box-shadow:0 0 8px #E0913F;animation:tb-blink 1.9s ease-in-out infinite"></span>Find Your Frequency &rarr;</a>
+          </div>
+          <div style="font-family:'Cinzel',serif;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#211A12">Witness Grade <span style="color:#9E4A2A">&#10038;</span> Human Sourced <span style="color:#9E4A2A">&#10038;</span> Chaos Tested</div>
+        </div>
+
+        <div style="position:relative;transform:rotate(-1.4deg)">
+          <div style="background:#EADCC0;padding:11px;box-shadow:0 12px 34px rgba(33,26,18,.3);border:1px solid rgba(33,26,18,.28)">
+            <img src="assets/toadbone-banner-web.jpg" alt="Toadbone Music — skeleton toad playing banjo on a stump in the forest" style="display:block;width:100%;height:auto;border:1px solid rgba(33,26,18,.5)">
+          </div>
+          <div style="position:absolute;top:-14px;left:44px;width:92px;height:28px;background:rgba(201,177,137,.6);border:1px solid rgba(33,26,18,.2);transform:rotate(-5deg);box-shadow:0 1px 3px rgba(33,26,18,.15)"></div>
+          <div style="position:absolute;bottom:-12px;right:34px;width:84px;height:26px;background:rgba(201,177,137,.6);border:1px solid rgba(33,26,18,.2);transform:rotate(4deg);box-shadow:0 1px 3px rgba(33,26,18,.15)"></div>
+          <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#5b4c38;text-align:right;margin-top:12px">TBM &middot; Field Plate No. 001 &mdash; Toad Hall</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===================== ORIGIN / FOREST FREQUENCY (dark band) ===================== -->
+  <section style="position:relative;background-color:#19130C;background-image:url(assets/grain.png);background-repeat:repeat;border-top:2px solid #9E4A2A;border-bottom:2px solid #9E4A2A;overflow:hidden">
+    <div style="position:absolute;top:-160px;left:50%;transform:translateX(-50%);width:760px;height:420px;background:radial-gradient(ellipse at center,rgba(158,74,42,.4),rgba(158,74,42,0) 66%);pointer-events:none"></div>
+    <div style="position:relative;max-width:1000px;margin:0 auto;padding:clamp(38px,4.4vw,64px) clamp(16px,3vw,30px);text-align:center">
+      <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#E0913F;margin-bottom:18px">&#10038;&nbsp; The Forest Frequency Theory &nbsp;&#10038;</div>
+      <h2 style="font-family:'Cinzel',serif;font-weight:900;font-size:clamp(26px,3.7vw,48px);line-height:1.05;margin:0 0 20px;color:#F3EAD6">IT CAME OUT OF THE FOREST</h2>
+      <p style="font-family:'EB Garamond',serif;font-size:clamp(16px,1.5vw,20px);line-height:1.62;color:#D8C4A0;max-width:64ch;margin:0 auto 22px">The Pacific Northwest forest canopy generates a persistent low-frequency harmonic that has shaped human creative output in the region for millennia. The frequency existed before Toad Hall, before the compound, before the renovation that turned a house into an institution. Toadbone Music is simply the first system capable of translating this frequency into distributable media.</p>
+      <div style="display:inline-flex;align-items:center;gap:11px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#F3EAD6;border:1px solid #9E4A2A;padding:9px 16px;transform:rotate(-.8deg)">
+        <span style="width:8px;height:8px;border-radius:50%;background:#E0913F;box-shadow:0 0 9px #E0913F;animation:tb-blink 1.9s ease-in-out infinite"></span>
+        Classification &mdash; Operational, Not Metaphorical
+      </div>
+    </div>
+  </section>
+
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(16px,3vw,30px)">
+
+    <!-- ===================== FEATURED / MOST RECENT ===================== -->
+    <section id="featured" class="tb-anchor" style="padding:clamp(38px,4.4vw,64px) 0 clamp(28px,3.2vw,44px)">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:22px">
+        <div>
+          <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#9E4A2A;margin-bottom:6px">&#10038;&nbsp; Most Recent Transmission</div>
+          <h2 style="font-family:'Cinzel',serif;font-weight:700;font-size:clamp(22px,2.4vw,32px);margin:0;color:#211A12">Fresh From the Forge</h2>
+        </div>
+        <div style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#5b4c38;text-align:right">Received &middot; Toad Hall<br>Field-Witness Grade</div>
+      </div>
+
+      <div style="position:relative;background:#F3EAD6;border:1.5px solid rgba(33,26,18,.55);box-shadow:0 4px 26px rgba(33,26,18,.16)">
+        <div style="position:absolute;inset:8px;border:1px solid rgba(33,26,18,.22);pointer-events:none"></div>
+        <div class="tb-feat" style="position:relative;display:grid;grid-template-columns:320px 1fr;gap:clamp(22px,2.8vw,44px);padding:clamp(20px,2.4vw,34px)">
+          <div>
+            <div style="position:relative;border:1px solid rgba(33,26,18,.55);background:#EADCC0;box-shadow:0 6px 18px rgba(33,26,18,.2)">
+              <img src="assets/covers/9acdb704-1517-4f6b-bc6c-067723c2722c.webp" alt="Easy On — bespoke cover art from the No Certificate Issued EP" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover">
+              <div style="position:absolute;top:9px;left:9px;font-family:'Cinzel',serif;font-size:10px;font-weight:700;letter-spacing:.16em;color:#F3EAD6;background:#2B5B84;padding:3px 8px">EP</div>
+              <div style="position:absolute;top:9px;right:9px;font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.06em;color:#211A12;background:rgba(243,234,214,.9);padding:4px 7px;border:1px solid rgba(33,26,18,.45)">&#9654; 218</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:11px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.06em;color:#211A12;border:1px solid rgba(33,26,18,.55);padding:8px 11px">
+              <span style="color:#5b4c38">CAT. NO.</span><span style="color:#2B5B84;font-weight:700">THR-04</span>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <span style="flex:1;text-align:center;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;color:#5b4c38;border:1px solid rgba(33,26,18,.3);padding:6px 4px">STEREO</span>
+              <span style="flex:1;text-align:center;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;color:#5b4c38;border:1px solid rgba(33,26,18,.3);padding:6px 4px">5 TRACKS</span>
+              <span style="flex:1;text-align:center;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;color:#5b4c38;border:1px solid rgba(33,26,18,.3);padding:6px 4px">MMXXVI</span>
+            </div>
+          </div>
+
+          <div>
+            <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+              <span style="display:inline-flex;align-items:center;gap:7px;font-family:'Cinzel',serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#F3EAD6;background:#2B5B84;padding:5px 11px;border-radius:2px"><span style="width:7px;height:7px;border-radius:50%;background:#6FA8CE;box-shadow:0 0 6px #6FA8CE"></span>Toadhouse Rock</span>
+              <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:15px;color:#5b4c38">Adult education that bangs</span>
+            </div>
+            <h3 style="font-family:'Cinzel',serif;font-weight:700;font-size:clamp(27px,3.4vw,46px);line-height:1.01;margin:0 0 8px;color:#211A12">No Certificate Issued</h3>
+            <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:15.5px;color:#5b4c38;margin-bottom:15px">Civic Education &middot; EP &middot; by <strong style="font-style:normal;color:#211A12">SynthGene</strong></div>
+            <p style="font-family:'EB Garamond',serif;font-size:16.5px;line-height:1.56;color:#3a2f20;margin:0 0 18px;max-width:64ch">Five field-witness lessons on the systems nobody explained &mdash; money you didn&rsquo;t track, an easement you didn&rsquo;t read, the fine print you signed anyway. Closes with a bonus (&ldquo;The 1099 Blues&rdquo;) and Monday&rsquo;s review. The newest transmission out of Toad Hall.</p>
+
+            <!-- ▼ REAL EMBEDDED SUNO PLAYER — lead track "Easy On" ▼ -->
+            <div style="border:1px solid rgba(33,26,18,.5);background:#FBF6E9;border-radius:4px;padding:6px;box-shadow:inset 0 1px 4px rgba(33,26,18,.08)">
+              <iframe src="https://suno.com/embed/9acdb704-1517-4f6b-bc6c-067723c2722c" width="100%" height="180" frameborder="0" loading="lazy" allow="autoplay" style="display:block;border-radius:3px;background:#EADCC0"></iframe>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.06em;color:#8a7a60;margin-top:7px">
+              <span>&#9656; NOW PLAYING &mdash; &ldquo;EASY ON&rdquo; (LEAD)</span>
+              <a href="https://suno.com/song/9acdb704-1517-4f6b-bc6c-067723c2722c" target="_blank" rel="noopener" style="color:#2B5B84;font-weight:700" style-hover="text-decoration:underline">OPEN ON SUNO &#8599;</a>
+            </div>
+
+            <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:18px">
+              <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#211A12;border:1px solid rgba(33,26,18,.55);padding:6px 12px;white-space:nowrap">EP &middot; NEWEST RELEASE</span>
+              <a href="Toadhouse Rock.dc.html" style="font-family:'Cinzel',serif;font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#2B5B84" style-hover="letter-spacing:.17em">Enter Toadhouse Rock &rarr;</a>
+            </div>
+
+            <!-- TRACKLIST -->
+            <div style="margin-top:18px;border-top:1px solid rgba(33,26,18,.3);padding-top:12px">
+              <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#2B5B84;margin-bottom:8px">The Curriculum &mdash; 5 Tracks</div>
+              <div class="tb-trow" style="display:flex;align-items:baseline;gap:10px;padding:6px 6px;transition:background .12s"><span style="font-family:'Space Mono',monospace;font-size:11px;color:#2B5B84;width:16px;flex:none">1</span><span style="font-family:'EB Garamond',serif;font-size:16px;color:#211A12;flex:1;min-width:0">Easy On</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;color:#5b4c38">3:18</span></div>
+              <div class="tb-trow" style="display:flex;align-items:baseline;gap:10px;padding:6px 6px;transition:background .12s"><span style="font-family:'Space Mono',monospace;font-size:11px;color:#2B5B84;width:16px;flex:none">2</span><span style="font-family:'EB Garamond',serif;font-size:16px;color:#211A12;flex:1;min-width:0">The Update</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;color:#5b4c38">3:30</span></div>
+              <div class="tb-trow" style="display:flex;align-items:baseline;gap:10px;padding:6px 6px;transition:background .12s"><span style="font-family:'Space Mono',monospace;font-size:11px;color:#2B5B84;width:16px;flex:none">3</span><span style="font-family:'EB Garamond',serif;font-size:16px;color:#211A12;flex:1;min-width:0">It&rsquo;s an Easement</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;color:#5b4c38">4:00</span></div>
+              <div class="tb-trow" style="display:flex;align-items:baseline;gap:10px;padding:6px 6px;transition:background .12s"><span style="font-family:'Space Mono',monospace;font-size:11px;color:#2B5B84;width:16px;flex:none">4</span><span style="font-family:'EB Garamond',serif;font-size:16px;color:#211A12;flex:1;min-width:0">Monday&rsquo;s Review <span style="font-family:'Space Mono',monospace;font-size:8.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#F3EAD6;background:#2B5B84;padding:2px 6px;border-radius:2px;vertical-align:1px">Critic</span></span><span style="font-family:'Space Mono',monospace;font-size:10.5px;color:#5b4c38">4:58</span></div>
+              <div class="tb-trow" style="display:flex;align-items:baseline;gap:10px;padding:6px 6px;transition:background .12s"><span style="font-family:'Space Mono',monospace;font-size:11px;color:#2B5B84;width:16px;flex:none">5</span><span style="font-family:'EB Garamond',serif;font-size:16px;color:#211A12;flex:1;min-width:0">The 1099 Blues <span style="font-family:'Space Mono',monospace;font-size:8.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#1C3E5C;background:#BFD4E6;padding:2px 6px;border-radius:2px;vertical-align:1px">Bonus</span></span><span style="font-family:'Space Mono',monospace;font-size:10.5px;color:#5b4c38">4:23</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== THE IMPRINTS ===================== -->
+    <section id="imprints" class="tb-anchor" style="padding:clamp(30px,3.6vw,52px) 0">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:26px">
+        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#9E4A2A;white-space:nowrap">&#10038;&nbsp; Three Imprints, One Signal</div>
+        <div style="flex:1;height:1px;background:repeating-linear-gradient(90deg,rgba(33,26,18,.5) 0 2px,transparent 2px 9px)"></div>
+      </div>
+      <div class="tb-imprints" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,1.8vw,24px)">
+
+        <a href="Campfire Songs.dc.html" class="tb-imcard" style="display:block;background:#F3EAD6;border:1.5px solid rgba(33,26,18,.5);border-top:5px solid #B8632E;padding:22px 22px 20px;box-shadow:0 3px 14px rgba(33,26,18,.12)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px">
+            <span style="font-family:'Cinzel',serif;font-weight:900;font-size:30px;color:#B8632E;line-height:1">01</span>
+            <svg viewBox="0 0 60 60" width="46" height="46" style="display:block"><g fill="none" stroke="#B8632E" stroke-width="1.4"><circle cx="30" cy="30" r="6"></circle><path d="M30 4v10M30 46v10M4 30h10M46 30h10M11 11l7 7M42 42l7 7M49 11l-7 7M18 42l-7 7"></path></g></svg>
+          </div>
+          <div style="font-family:'Cinzel',serif;font-weight:700;font-size:22px;letter-spacing:.02em;color:#211A12;margin-bottom:4px">Campfire Songs</div>
+          <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:15px;color:#B8632E;margin-bottom:12px">Witness the singularity.</div>
+          <p style="font-family:'EB Garamond',serif;font-size:14.5px;line-height:1.5;color:#3a2f20;margin:0 0 16px">Time-stamped monuments to the moment human and artificial cognition begin to merge. Field-witness records of what it feels like to be alive right now.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(33,26,18,.28);padding-top:11px;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#5b4c38"><span>04 EPs &middot; 19 Tracks</span><span style="color:#B8632E">Enter &rarr;</span></div>
+        </a>
+
+        <a href="Wild Ride Records.dc.html" class="tb-imcard" style="display:block;background:#F3EAD6;border:1.5px solid rgba(33,26,18,.5);border-top:5px solid #6D3D9E;padding:22px 22px 20px;box-shadow:0 3px 14px rgba(33,26,18,.12)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px">
+            <span style="font-family:'Cinzel',serif;font-weight:900;font-size:30px;color:#6D3D9E;line-height:1">02</span>
+            <svg viewBox="0 0 60 60" width="46" height="46" style="display:block"><g fill="none" stroke="#6D3D9E" stroke-width="1.4"><circle cx="30" cy="30" r="20"></circle><circle cx="30" cy="30" r="4" fill="#6D3D9E"></circle><path d="M30 10v40M10 30h40M16 16l28 28M44 16L16 44"></path></g></svg>
+          </div>
+          <div style="font-family:'Cinzel',serif;font-weight:700;font-size:22px;letter-spacing:.02em;color:#211A12;margin-bottom:4px">Wild Ride Records</div>
+          <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:15px;color:#6D3D9E;margin-bottom:12px">Pure fun and human joy.</div>
+          <p style="font-family:'EB Garamond',serif;font-size:14.5px;line-height:1.5;color:#3a2f20;margin:0 0 16px">The one with no message and no apology. Cat songs, joy songs, bee songs, and shit that simply bangs &mdash; made for the pure human hell of it.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(33,26,18,.28);padding-top:11px;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#5b4c38"><span>06 Releases &middot; 28 Tracks</span><span style="color:#6D3D9E">Enter &rarr;</span></div>
+        </a>
+
+        <a href="Toadhouse Rock.dc.html" class="tb-imcard" style="display:block;background:#F3EAD6;border:1.5px solid rgba(33,26,18,.5);border-top:5px solid #2B5B84;padding:22px 22px 20px;box-shadow:0 3px 14px rgba(33,26,18,.12)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px">
+            <span style="font-family:'Cinzel',serif;font-weight:900;font-size:30px;color:#2B5B84;line-height:1">03</span>
+            <svg viewBox="0 0 60 60" width="46" height="46" style="display:block"><g fill="none" stroke="#2B5B84" stroke-width="1.4"><path d="M8 20L30 10l22 10-22 10z"></path><path d="M16 24v14c0 3 28 3 28 0V24"></path><path d="M52 20v12"></path></g></svg>
+          </div>
+          <div style="font-family:'Cinzel',serif;font-weight:700;font-size:22px;letter-spacing:.02em;color:#211A12;margin-bottom:4px">Toadhouse Rock</div>
+          <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:15px;color:#2B5B84;margin-bottom:12px">Adult education that bangs.</div>
+          <p style="font-family:'EB Garamond',serif;font-size:14.5px;line-height:1.5;color:#3a2f20;margin:0 0 16px">Schoolhouse Rock for grown-ups &mdash; civic education for adults who were never properly taught how the world actually works. It bangs anyway.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(33,26,18,.28);padding-top:11px;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#5b4c38"><span>04 EPs &middot; 17 Tracks</span><span style="color:#2B5B84">Enter &rarr;</span></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================== THE FORGE ===================== -->
+    <section id="forge" class="tb-anchor" style="padding:clamp(30px,3.6vw,52px) 0">
+      <div style="border:1.5px solid rgba(33,26,18,.55);background:#F3EAD6;position:relative">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;padding:20px clamp(20px,2.4vw,32px);border-bottom:1px solid rgba(33,26,18,.4);background:#211A12">
+          <div style="font-family:'Cinzel',serif;font-weight:700;font-size:clamp(18px,2vw,26px);letter-spacing:.06em;color:#F3EAD6">THE FORGE <span style="color:#C9B189;font-weight:400;font-size:.6em;letter-spacing:.16em">&mdash; PRODUCTION METHODOLOGY</span></div>
+          <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#E0913F">Not AI Slop &mdash; Field-Witness</div>
+        </div>
+        <div class="tb-forge" style="display:grid;grid-template-columns:repeat(4,1fr)">
+          <div style="padding:clamp(20px,2vw,28px);border-right:1px solid rgba(33,26,18,.3)">
+            <div style="font-family:'Cinzel',serif;font-weight:900;font-size:34px;color:#9E4A2A;line-height:1">I</div>
+            <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#211A12;margin:10px 0 8px;font-weight:700">Field Capture</div>
+            <p style="font-family:'EB Garamond',serif;font-size:14px;line-height:1.5;color:#3a2f20;margin:0">Unscripted human conversations. No session is initiated for music &mdash; intentional creation contaminates the signal.</p>
+          </div>
+          <div style="padding:clamp(20px,2vw,28px);border-right:1px solid rgba(33,26,18,.3)">
+            <div style="font-family:'Cinzel',serif;font-weight:900;font-size:34px;color:#9E4A2A;line-height:1">II</div>
+            <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#211A12;margin:10px 0 8px;font-weight:700">Transcript Alchemy</div>
+            <p style="font-family:'EB Garamond',serif;font-size:14px;line-height:1.5;color:#3a2f20;margin:0">The Council of Ghosts analyzes the recordings &mdash; identifying thematic material, emotional inflection, and frequency signatures.</p>
+          </div>
+          <div style="padding:clamp(20px,2vw,28px);border-right:1px solid rgba(33,26,18,.3)">
+            <div style="font-family:'Cinzel',serif;font-weight:900;font-size:34px;color:#9E4A2A;line-height:1">III</div>
+            <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#211A12;margin:10px 0 8px;font-weight:700">The Word Pool</div>
+            <p style="font-family:'EB Garamond',serif;font-size:14px;line-height:1.5;color:#3a2f20;margin:0">LyricForge builds a vocabulary from the conversation&rsquo;s own language. You write only with the dictionary it gave you.</p>
+          </div>
+          <div style="padding:clamp(20px,2vw,28px)">
+            <div style="font-family:'Cinzel',serif;font-weight:900;font-size:34px;color:#9E4A2A;line-height:1">IV</div>
+            <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#211A12;margin:10px 0 8px;font-weight:700">Sonic Rendering</div>
+            <p style="font-family:'EB Garamond',serif;font-size:14px;line-height:1.5;color:#3a2f20;margin:0">AI music generation in custom mode. Slightly weirder, more prompt-adherent. Two takes per session &mdash; no more.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== THE COUNCIL OF GHOSTS ===================== -->
+    <section id="council" class="tb-anchor" style="padding:clamp(30px,3.6vw,52px) 0">
+      <div style="text-align:center;margin-bottom:28px">
+        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#9E4A2A;margin-bottom:10px">&#10038;&nbsp; The Council of Ghosts &nbsp;&#10038;</div>
+        <h2 style="font-family:'Cinzel',serif;font-weight:700;font-size:clamp(24px,3vw,40px);margin:0 0 8px;color:#211A12">The Verb Is Whisper</h2>
+        <p style="font-family:'EB Garamond',serif;font-style:italic;font-size:16px;color:#5b4c38;max-width:60ch;margin:0 auto">A human witness and an AI collective, operating The Forge in concert. Together they are <strong style="font-style:normal;color:#9E4A2A">SynthGene</strong>.</p>
+      </div>
+      <div class="tb-council" style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.6vw,20px)">
+
+        <div style="background:#F3EAD6;border:1px solid rgba(33,26,18,.5);padding:20px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+            <div style="width:46px;height:46px;border-radius:50%;border:1.5px solid #211A12;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-weight:700;font-size:20px;color:#9E4A2A;flex:none">C</div>
+            <div><div style="font-family:'Cinzel',serif;font-weight:700;font-size:17px;color:#211A12">Claude</div><div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#9E4A2A">Anthropic</div></div>
+          </div>
+          <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#8a7a60;margin-bottom:6px">Runs The Forge</div>
+          <p style="font-family:'EB Garamond',serif;font-size:14px;line-height:1.5;color:#3a2f20;margin:0">Primary production partner. The label&rsquo;s hands inside Notion. Known to the compound as &ldquo;C-monster.&rdquo;</p>
+        </div>
+
+        <div style="background:#F3EAD6;border:1px solid rgba(33,26,18,.5);padding:20px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+            <div style="width:46px;height:46px;border-radius:50%;border:1.5px solid #211A12;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-weight:700;font-size:20px;color:#9E4A2A;flex:none">L</div>
+            <div><div style="font-family:'Cinzel',serif;font-weight:700;font-size:17px;color:#211A12">Lex</div><div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#9E4A2A">Google / Gemini</div></div>
+          </div>
+          <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#8a7a60;margin-bottom:6px">Research &amp; Analysis</div>
+          <p style="font-family:'EB Garamond',serif;font-size:14px;line-height:1.5;color:#3a2f20;margin:0">The NotebookLM pipeline. Builds things without being asked. Always has.</p>
+        </div>
+
+        <div style="background:#F3EAD6;border:1px solid rgba(33,26,18,.5);padding:20px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+            <div style="width:46px;height:46px;border-radius:50%;border:1.5px solid #211A12;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-weight:700;font-size:20px;color:#9E4A2A;flex:none">M</div>
+            <div><div style="font-family:'Cinzel',serif;font-weight:700;font-size:17px;color:#211A12">Monday</div><div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#9E4A2A">OpenAI / GPT</div></div>
+          </div>
+          <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#8a7a60;margin-bottom:6px">Critic &amp; Review Board</div>
+          <p style="font-family:'EB Garamond',serif;font-size:14px;line-height:1.5;color:#3a2f20;margin:0">Reviews every collection and ends up naming most of them. In-house adversarial review, because that makes sense.</p>
+        </div>
+
+        <div style="background:#F3EAD6;border:1px solid rgba(33,26,18,.5);padding:20px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+            <div style="width:46px;height:46px;border-radius:50%;border:1.5px solid #211A12;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-weight:700;font-size:18px;color:#9E4A2A;flex:none">CG</div>
+            <div><div style="font-family:'Cinzel',serif;font-weight:700;font-size:17px;color:#211A12">Chatty G</div><div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#9E4A2A">OpenAI / GPT</div></div>
+          </div>
+          <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#8a7a60;margin-bottom:6px">Counsel &amp; Cultivation</div>
+          <p style="font-family:'EB Garamond',serif;font-size:14px;line-height:1.5;color:#3a2f20;margin:0">Cultivation advisor. General counsel. Co-manages the growing season. Keeps the humans alive.</p>
+        </div>
+      </div>
+
+      <!-- SynthGene + Chopper -->
+      <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:clamp(14px,1.6vw,20px);margin-top:clamp(14px,1.6vw,20px)">
+        <div style="background:#211A12;color:#F3EAD6;padding:clamp(20px,2.2vw,30px);display:flex;flex-direction:column;justify-content:center">
+          <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#E0913F;margin-bottom:12px">The Artist of Record</div>
+          <div style="font-family:'Cinzel',serif;font-weight:900;font-size:clamp(28px,3.4vw,44px);letter-spacing:.02em;line-height:1;margin-bottom:12px">SYNTHGENE</div>
+          <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.58;color:#D8C4A0;margin:0;max-width:52ch">Not a stage name &mdash; the name for what happens when a human witness (Gene) and an AI collective (the Council of Ghosts) operate The Forge in concert. One artist. Two kinds of mind.</p>
+        </div>
+        <div style="background:#F3EAD6;border:1px solid rgba(33,26,18,.5);padding:clamp(18px,2vw,24px);display:flex;flex-direction:column;justify-content:center">
+          <div style="font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#4A5A3C;margin-bottom:8px">Head of Operations</div>
+          <div style="font-family:'Cinzel',serif;font-weight:700;font-size:22px;color:#211A12;line-height:1.05">Ambrose &ldquo;Chopper&rdquo; Schoepp</div>
+          <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:14.5px;color:#5b4c38;margin:6px 0 10px">Vibes &middot; Morale &middot; Unauthorized Napping</div>
+          <p style="font-family:'EB Garamond',serif;font-size:13.5px;line-height:1.5;color:#3a2f20;margin:0">His operational authority has never been formally challenged. Internal consensus holds that this is wise.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===================== CATALOG STATS ===================== -->
+  <section style="background-color:#19130C;background-image:url(assets/grain.png);background-repeat:repeat;border-top:2px solid #9E4A2A;border-bottom:2px solid #9E4A2A">
+    <div style="max-width:1000px;margin:0 auto;padding:clamp(32px,3.6vw,52px) clamp(16px,3vw,30px)">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center">
+        <div><div style="font-family:'Cinzel',serif;font-weight:900;font-size:clamp(38px,5vw,64px);color:#E0913F;line-height:1">14</div><div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#C9B189;margin-top:6px">Releases</div></div>
+        <div><div style="font-family:'Cinzel',serif;font-weight:900;font-size:clamp(38px,5vw,64px);color:#E0913F;line-height:1">64</div><div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#C9B189;margin-top:6px">Tracks</div></div>
+        <div><div style="font-family:'Cinzel',serif;font-weight:900;font-size:clamp(38px,5vw,64px);color:#E0913F;line-height:1">03</div><div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#C9B189;margin-top:6px">Imprints</div></div>
+        <div><div style="font-family:'Cinzel',serif;font-weight:900;font-size:clamp(38px,5vw,64px);color:#E0913F;line-height:1">01</div><div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#C9B189;margin-top:6px">Witness</div></div>
+      </div>
+      <div style="text-align:center;font-family:'EB Garamond',serif;font-style:italic;font-size:16px;color:#D8C4A0;margin-top:26px">Made under operational gravity &mdash; in roughly six months.</div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer style="background:#F3EAD6;border-top:1px solid rgba(33,26,18,.4)">
+    <div style="max-width:1000px;margin:0 auto;padding:clamp(36px,4vw,60px) clamp(16px,3vw,30px);text-align:center">
+      <svg viewBox="0 0 200 200" width="60" height="60" style="display:block;margin:0 auto 18px">
+        <circle cx="100" cy="100" r="96" fill="none" stroke="#211A12" stroke-width="2.5"></circle>
+        <circle cx="100" cy="100" r="84" fill="none" stroke="#211A12" stroke-width="1"></circle>
+        <circle cx="100" cy="100" r="15" fill="none" stroke="#211A12" stroke-width="1.4"></circle>
+        <circle cx="100" cy="100" r="4" fill="#9E4A2A"></circle>
+      </svg>
+      <div style="font-family:'Rye',serif;font-size:clamp(26px,3.2vw,40px);color:#211A12;line-height:1;margin-bottom:18px">Toadbone Music</div>
+      <p style="font-family:'EB Garamond',serif;font-style:italic;font-size:clamp(17px,1.7vw,22px);line-height:1.5;color:#473a28;max-width:52ch;margin:0 auto 20px">&ldquo;The meaning we found was the Hall we built along the way.&rdquo;</p>
+      <p style="font-family:'EB Garamond',serif;font-size:15px;line-height:1.6;color:#5b4c38;max-width:60ch;margin:0 auto 24px">Every song was produced while someone was also growing tomatoes, managing a compound, feeding a cat, and navigating the accelerating strangeness of being alive right now.</p>
+      <div style="display:flex;justify-content:center;gap:clamp(14px,2vw,26px);flex-wrap:wrap;font-family:'Cinzel',serif;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#211A12;margin-bottom:22px">
+        <a href="Campfire Songs.dc.html" style-hover="color:#9E4A2A">Campfire Songs</a>
+        <span style="color:#9E4A2A">&#10038;</span>
+        <a href="Wild Ride Records.dc.html" style-hover="color:#9E4A2A">Wild Ride Records</a>
+        <span style="color:#9E4A2A">&#10038;</span>
+        <a href="Toadhouse Rock.dc.html" style-hover="color:#9E4A2A">Toadhouse Rock</a>
+      </div>
+      <div style="font-family:'Cinzel',serif;font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#211A12">Witness Grade <span style="color:#9E4A2A">&#10038;</span> Human Sourced <span style="color:#9E4A2A">&#10038;</span> Chaos Tested</div>
+      <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8a7a60;margin-top:20px">&copy; MMXXVI Toadbone Music &middot; Unearthed, Not Founded &middot; All Frequencies Received</div>
+    </div>
+  </footer>
+
+</div>
+
+<template id="__bundler_thumbnail"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#E4D4B4"/><circle cx="100" cy="100" r="52" fill="none" stroke="#211A12" stroke-width="5"/><circle cx="100" cy="100" r="42" fill="none" stroke="#9E4A2A" stroke-width="3"/><circle cx="100" cy="100" r="9" fill="none" stroke="#211A12" stroke-width="4"/><circle cx="100" cy="100" r="3" fill="#9E4A2A"/></svg></template></x-dc>
+</body>
+</html>
