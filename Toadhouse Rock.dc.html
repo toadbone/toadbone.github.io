@@ -221,7 +221,7 @@ class Component extends DCLogic {
       code: r.code, title: r.title, type: r.type,
       tagline: r.tagline, hasTagline: !!r.tagline,
       cover: r.cover_image, trackCount: r.track_count,
-      plays: (r.total_plays || 0).toLocaleString(),
+      plays: r.total_plays == null ? 'NEW' : r.total_plays.toLocaleString(),
       sunoUrl: r.playlist_url || cat.suno_profile_url,
       tracks: r.tracks.map(mkTrack)
     }));

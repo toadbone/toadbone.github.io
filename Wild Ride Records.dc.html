@@ -79,8 +79,8 @@
         <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:clamp(18px,2vw,26px);color:#E0A93B;margin:20px 0 20px">Pure fun and human joy.</div>
         <p style="font-family:'EB Garamond',serif;font-size:clamp(16px,1.5vw,20px);line-height:1.6;color:#D9C9EC;max-width:60ch;margin:0 auto 26px">No thesis. No singularity to witness. Just cat songs, joy songs, bee songs, and the pure human hell of making something because it&rsquo;s fun. This is the one you put on to feel good &mdash; and the frog would want it that way.</p>
         <div style="display:inline-flex;align-items:center;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#F3EAD6;background:rgba(20,10,32,.5);border:2px solid #6D3D9E;box-shadow:4px 4px 0 rgba(224,169,59,.3)">
-          <span style="padding:9px 16px">06 Releases</span>
-          <span style="padding:9px 16px;border-left:2px solid #6D3D9E;color:#E0A93B">29 Tracks</span>
+          <span style="padding:9px 16px">07 EPs + Album</span>
+          <span style="padding:9px 16px;border-left:2px solid #6D3D9E;color:#E0A93B">39 Tracks</span>
           <span style="padding:9px 16px;border-left:2px solid #6D3D9E">by SynthGene</span>
         </div>
       </div>
@@ -221,7 +221,7 @@ class Component extends DCLogic {
       code: r.code, title: r.title, type: r.type,
       tagline: r.tagline, hasTagline: !!r.tagline,
       cover: r.cover_image, trackCount: r.track_count,
-      plays: (r.total_plays || 0).toLocaleString(),
+      plays: r.total_plays == null ? 'NEW' : r.total_plays.toLocaleString(),
       sunoUrl: r.playlist_url || cat.suno_profile_url,
       tracks: r.tracks.map(mkTrack)
     }));
